@@ -1,0 +1,52 @@
+{#
+/**
+ * @file
+ * Template for a node page full.
+ */
+#}
+{# {% include 'artisan:article' with {
+  title: node.label,
+  publish_date: date,
+  body: node.hasField('body') and not node.get('body').isEmpty() ? content.body,
+  author: author_name,
+} %} #}
+<h1 class="article__title text-center mb-8">{{ node.label }}</h1>
+<div class="related-content flex gap-8 items-end">
+	{% for item in content.field_related_content['#items'] %}
+		
+    {% set title %}
+		<a href="{{ url }}">{{  item.entity.field_title.value  }}</a>
+		{% endset %}
+
+		{% embed 'artisan:card' with {
+      title: title,
+      title_heading_level: 'h3',
+      image: true,
+      content: item.entity.field_description.value|render|striptags|trim|raw,
+      border: 'border',
+      actions: true,
+      card_extra_classes: ['mb-8','max-w-32']
+    } %}
+      {% block image %}
+          {% set paragraph = item.entity.field_media.entity %}
+              {% set image = paragraph.field_media_image.entity %}
+              {% set file = image.fileuri %}
+              <img width='300'
+                src="{{ file_url(file) }}"
+                alt="{{ image.alt|default('') }}"
+              >
+      {% endblock %}
+			{% block actions %}
+				{% include 'artisan:button' with {
+      text: 'Read more',
+      url: url,
+      color: 'secondary',
+      variant: 'outline',
+      } only %}
+			{% endblock %}
+		{% endembed %}
+	{% endfor %}
+
+</div>
+{# {{dump(item.entity.field_media)}} #}
+{# {{ content.field_related_content }} #}

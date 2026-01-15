@@ -1,0 +1,18 @@
+status: true
+dependencies:
+  module:
+    - language
+  theme:
+    - fresh_theme
+id: fresh_theme_language_switcher
+theme: fresh_theme
+region: navigation_end
+weight: -5
+provider: null
+plugin: 'language_block:language_interface'
+settings:
+  id: 'language_block:language_interface'
+  label: 'Language switcher'
+  label_display: '0'
+  provider: language
+visibility: {  }

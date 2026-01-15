@@ -1,0 +1,8 @@
+{% extends "page.html.twig" %}
+
+{% block main_content %}
+  {% embed 'artisan:user-pages' with {
+      main_content: page.content,
+  } only %}
+  {% endembed %}
+{% endblock %}

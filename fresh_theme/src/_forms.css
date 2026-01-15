@@ -1,0 +1,100 @@
+form {
+  .form-item {
+    margin-bottom: var(--form-item-margin-bottom);
+
+    .description {
+      margin-top: var(--form-description-margin-top);
+      color: var(--form-description-color);
+    }
+  }
+
+  label {
+    display: block;
+    margin-bottom: var(--form-label-margin);
+    font-weight: var(--form-label-font-weight);
+  }
+
+  .form-text,
+  select,
+  textarea,
+  .form-date,
+  input[type="file"],
+  input[type="number"],
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="search"] {
+    padding: var(--form-input-padding);
+    border: 1px solid var(--form-input-border-color);
+    border-radius: var(--theme-radius);
+    width: 100%;
+
+    &:focus,
+    &:focus-visible {
+      border-color: var(--color-primary);
+      outline: none;
+    }
+
+    &[aria-invalid="true"] {
+      color: var(--color-error);
+      border-color: var(--color-error);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fb2c36'%3E%3Cpath fill-rule='evenodd' d='M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM8 4a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-1.5 0v-3A.75.75 0 0 1 8 4Zm0 8a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z' clip-rule='evenodd'%3E%3C/path%3E%3C/svg%3E");
+      background-position: right 0.5rem center;
+      background-repeat: no-repeat;
+      background-size: 1rem;
+      padding-right: 2rem;
+    }
+  }
+
+  .form-item-checkbox,
+  .js-form-type-checkbox,
+  .form-item-radio {
+    position: relative;
+    padding-left: var(--form-checkbox-separation);
+    margin-bottom: calc(var(--form-item-margin-bottom) / 2);
+
+    label {
+      --form-label-margin: 0;
+    }
+
+    .description {
+      --form-description-margin-top: 0;
+    }
+
+    input {
+      position: absolute;
+      top: 5px;
+      left: 0;
+      accent-color: var(--form-checkbox-color);
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+
+  input[type="range"] {
+    width: 100%;
+    accent-color: var(--form-checkbox-color);
+  }
+
+  fieldset {
+    legend {
+      margin-bottom: calc(var(--form-item-margin-bottom) / 2);
+    }
+  }
+
+  .form-submit {
+    @apply btn btn-primary;
+  }
+
+  .form-item--error-message {
+    margin-top: var(--form-label-margin);
+    font-size: var(--theme-font-size-sm);
+    font-weight: var(--form-label-font-weight);
+    color: var(--color-error);
+
+    a {
+      color: var(--color-error);
+    }
+  }
+}

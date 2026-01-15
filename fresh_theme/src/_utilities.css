@@ -1,0 +1,40 @@
+@utility h1 {
+  font-family: var(--theme-font-family);
+  font-size: var(--theme-h1-font-size);
+  font-weight: var(--theme-font-weight-bold);
+}
+
+@utility h2 {
+  font-family: var(--theme-font-family);
+  font-size: var(--theme-h2-font-size);
+  font-weight: var(--theme-font-weight-bold);
+}
+
+@utility h3 {
+  font-family: var(--theme-font-family);
+  font-size: var(--theme-h3-font-size);
+  font-weight: var(--theme-font-weight-bold);
+}
+
+@utility h4 {
+  font-family: var(--theme-font-family);
+  font-size: var(--theme-h4-font-size);
+  font-weight: var(--theme-font-weight-bold);
+}
+
+@utility h5 {
+  font-family: var(--theme-font-family);
+  font-size: var(--theme-h5-font-size);
+  font-weight: var(--theme-font-weight-bold);
+}
+
+@utility h6 {
+  font-family: var(--theme-font-family);
+  font-size: var(--theme-h6-font-size);
+  font-weight: var(--theme-font-weight-bold);
+}
+
+@utility container {
+  @apply mx-auto;
+  padding-inline: var(--theme-container-padding-x);
+}

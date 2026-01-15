@@ -1,0 +1,145 @@
+heroicons:
+  enabled: true
+  label: Hero icons
+  description: "Beautiful hand-crafted SVG icons, by the makers of Tailwind CSS."
+  links:
+    - https://heroicons.com/solid
+    - https://github.com/tailwindlabs/heroicons
+  version: 2.2.0
+  license:
+    name: MIT
+    url: https://github.com/tailwindlabs/heroicons/blob/master/LICENSE
+    gpl-compatible: true
+  extractor: svg
+  config:
+    sources:
+      - dist/vendor/heroicons/24/solid/{icon_id}.svg
+  settings:
+    size:
+      title: "Size"
+      type: "integer"
+      default: 24
+    color:
+      title: Fill color
+      type: "string"
+      format: "color"
+    aria_labelledby:
+      title: "Aria labelled by"
+      type: "string"
+      default: "Icon"
+  template: >-
+    <svg
+      class="heroicon icon icon-{{ icon_id|clean_class }}"
+      fill="{{ color|default('currentColor') }}"
+      viewBox="0 0 24 24"
+      width="{{ size|default(24) }}"
+      height="{{ size|default(24) }}"
+      role="img"
+      aria-labelledby="{{ aria_labelledby|default('Icon') }}"
+    >
+      {{ content }}
+    </svg>
+
+# Outline version is not using {group} with solid because of different settings
+# and template.
+heroicons_outline:
+  enabled: true
+  label: Hero icons outline
+  description: "Beautiful hand-crafted SVG icons, by the makers of Tailwind CSS."
+  links:
+    - https://heroicons.com/outline
+    - https://github.com/tailwindlabs/heroicons
+  version: 2.2.0
+  license:
+    name: MIT
+    url: https://github.com/tailwindlabs/heroicons/blob/master/LICENSE
+    gpl-compatible: true
+  extractor: svg
+  config:
+    sources:
+      - dist/vendor/heroicons/24/outline/{icon_id}.svg
+  settings:
+    size:
+      title: "Size"
+      type: "integer"
+      default: 24
+    color:
+      title: Stroke color
+      type: "string"
+      format: "color"
+    stroke_width:
+      title: "Stroke width"
+      type: "number"
+      default: 1.5
+      minimum: 1.0
+      maximum: 2.0
+      multipleOf: 0.1
+    aria_labelledby:
+      title: "Aria labelled by"
+      type: "string"
+      default: "Icon"
+  template: >-
+    <svg
+      class="heroicon icon icon-{{ icon_id|clean_class }}"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="{{ color|default('currentColor') }}"
+      stroke-width="{{ stroke_width|default(1.5) }}"
+      width="{{ size|default(24) }}"
+      height="{{ size|default(24) }}"
+      role="img"
+      aria-labelledby="{{ aria_labelledby|default('Icon') }}"
+    >
+      {{ content }}
+    </svg>
+
+
+
+
+phosphor:
+  enabled: true
+  label: Phosphor
+  description: "A flexible icon family for interfaces, diagrams, presentations — whatever, really."
+  links:
+    - https://phosphoricons.com
+    - https://github.com/phosphor-icons/core
+  version: 2.1.1
+  license:
+    name: MIT
+    url: https://github.com/phosphor-icons/core/blob/main/LICENSE
+    gpl-compatible: true
+  extractor: svg
+  config:
+    sources:
+      - icons/phosphor/{icon_id}.svg
+  settings:
+    size:
+      title: "Size"
+      type: "integer"
+      default: 32
+      multipleOf: 4
+      minimum: 16
+      maximum: 96
+    color:
+      title: Color
+      type: string
+      format: color
+    alt:
+      title: "Alt text"
+      type: "string"
+      description: "Accessibility alternative text, leave empty for decorative icon."
+  template: >-
+    <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 256 256"
+          width="{{ size|default(32) }}"
+          height="{{ size|default(32) }}"
+          fill="{{ color|default('currentColor') }}"
+          {% if alt %}
+            aria-label="{{ alt }}"
+          {% else %}
+            aria-hidden="true"
+          {% endif %}
+        >
+          {{ content }}
+        </svg>

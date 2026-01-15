@@ -1,0 +1,53 @@
+{#
+/**
+ * @file
+ * Template for the main page.
+ */
+#}
+{% set distraction_free = distraction_free ?: false %}
+{% set footer_type = footer_type ?: 'artisan:footer-two-columns' %}
+
+{% set classes = [
+  'page',
+] %}
+
+{% set main_classes = [
+  'content',
+  'container',
+  'py-5',
+]|merge(main_extra_classes ?: []) %}
+
+<div {{ attributes.addClass(classes) }}>
+ {% if not distraction_free %}
+    {% block header %}
+      {% embed 'artisan:header' with {
+        top: page.navigation_top,
+        content: {
+          navigation_start: page.navigation_start,
+          navigation_center: page.navigation_center,
+          navigation_end: page.navigation_end,
+        },
+        extra_classes: header_extra_classes,
+      } only %}
+      {% endembed %}
+    {% endblock %}
+  {% endif %}
+
+  <main class="{{ main_classes|join(' ') }}" id="main-content">
+    {% block main_content %}
+      {{ page.content }}
+    {% endblock %}
+  </main>
+
+  {% if not distraction_free %}
+    {% block footer %}
+      {% embed footer_type with {
+        top: page.footer_top,
+        menu: page.footer_menu,
+        branding: page.footer_branding,
+        bottom: page.footer_bottom,
+      } %}
+      {% endembed %}
+    {% endblock %}
+  {% endif %}
+</div>

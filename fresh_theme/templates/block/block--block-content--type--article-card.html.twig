@@ -1,0 +1,55 @@
+{# {% embed "artisan:block" with {
+  content,
+  plugin_id,
+  configuration,
+  attributes,
+  title_prefix,
+  title_suffix,
+} only %}
+{% endembed %} #}
+
+
+{#
+/**
+ * @file
+ * Template for a node page teaser.
+ */
+#}
+
+{% set base_url = request.getSchemeAndHttpHost() %}
+
+
+{% if content.field_card_image is not empty %}
+  {% set image = content.field_card_image[0]['#media'].field_media_image[0].entity.uri.value %}
+  {% set image_url = base_url ~ image|image_style('large') %}
+  
+  {# Create media object matching your component schema #}
+  {% set media = {
+    src: image_url,
+    alt: image_item.alt|default(''),
+    width: image_entity.width.value|default(1200),
+    height: image_entity.height.value|default(900)
+  } %}
+{% endif %}
+
+{% embed 'fresh_theme:card' with {
+  heading_text: content.field_card_title,
+  orientation: 'vertical',
+  style: 'full',
+  level: 2,
+  text: content.field_card_description.0['#text']|render|striptags,
+  button_url: content.field_card_cta.0['#url'],
+  button_label: content.field_card_cta.0['#title'],
+  button_variant: 'primary',
+  button_size: 'large'
+} %}
+    {% block media %}
+      {% if media is defined and media.src is not empty %}
+        {% include 'canvas:image' ignore missing with media only %}
+      {% endif %}
+    {% endblock %}
+{% endembed %}
+
+{# {{ dump(content.field_card_description) }} #}
+{# media : content.field_card_image[0]['#media'].field_media_image[0].entity.uri.value, #}
+

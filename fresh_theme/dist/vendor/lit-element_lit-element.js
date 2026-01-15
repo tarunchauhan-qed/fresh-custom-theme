@@ -1,0 +1,5 @@
+import{y as i}from"./@lit_reactive-element.js";import{B as d,T as l}from"./lit-html_lit-html.js";/**
+ * @license
+ * Copyright 2017 Google LLC
+ * SPDX-License-Identifier: BSD-3-Clause
+ */const t=globalThis;class r extends i{constructor(){super(...arguments),this.renderOptions={host:this},this._$Do=void 0}createRenderRoot(){var n;const e=super.createRenderRoot();return(n=this.renderOptions).renderBefore??(n.renderBefore=e.firstChild),e}update(e){const n=this.render();this.hasUpdated||(this.renderOptions.isConnected=this.isConnected),super.update(e),this._$Do=d(n,this.renderRoot,this.renderOptions)}connectedCallback(){var e;super.connectedCallback(),(e=this._$Do)==null||e.setConnected(!0)}disconnectedCallback(){var e;super.disconnectedCallback(),(e=this._$Do)==null||e.setConnected(!1)}render(){return l}}var o;r._$litElement$=!0,r.finalized=!0,(o=t.litElementHydrateSupport)==null||o.call(t,{LitElement:r});const s=t.litElementPolyfillSupport;s==null||s({LitElement:r});(t.litElementVersions??(t.litElementVersions=[])).push("4.2.0");export{r as i};

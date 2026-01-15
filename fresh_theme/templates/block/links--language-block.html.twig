@@ -1,0 +1,7 @@
+{% embed 'artisan:dropdown' with {
+  toggle: current_language_name,
+  attributes: attributes.addClass('dropdown-end', 'cursor-pointer'),
+  dropdown_content_extra_classes: ['menu', 'z-1'],
+  items: links,
+  } only %}
+{% endembed %}

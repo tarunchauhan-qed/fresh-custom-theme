@@ -1,0 +1,7 @@
+toggle
+
+toggle-xs
+toggle-sm
+toggle-md
+toggle-lg
+toggle-xl

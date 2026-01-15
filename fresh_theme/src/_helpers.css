@@ -1,0 +1,22 @@
+@media (min-width: theme(--breakpoint-lg)) {
+  details.dropdown {
+    > ul::after {
+      content: "";
+      display: block;
+      height: 16px;
+      left: 0;
+      position: absolute;
+      top: -16px;
+      width: 100%;
+    }
+  }
+}
+
+.navbar {
+  .navbar-center {
+    display: none;
+    @media (min-width: theme(--breakpoint-lg)) {
+      display: flex;
+    }
+  }
+}

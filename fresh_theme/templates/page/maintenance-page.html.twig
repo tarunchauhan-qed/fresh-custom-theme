@@ -1,0 +1,13 @@
+{% embed 'artisan:maintence-mode' with {
+  logo: logo,
+  site_name: site_name,
+  site_slogan: site_slogan,
+  front_page: front_page,
+  title: title,
+  highlighted: page.highlighted,
+  content: page.content,
+  sidebar_first: page.sidebar_first,
+  sidebar_second: page.sidebar_second,
+  footer: page.footer,
+} only %}
+{% endembed %}

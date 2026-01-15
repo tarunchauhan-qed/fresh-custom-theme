@@ -1,0 +1,14 @@
+{% if is_node %}
+  {% set classes = ['btn', 'btn-sm', 'btn-block', 'btn-soft', 'btn-secondary', 'mb-3'] %}
+  {% if is_active %}
+    {% set classes = classes|merge(['btn-active']) %}
+  {% endif %}
+{% else %}
+  {% set classes = ['tab'] %}
+  {% if is_active %}
+    {% set classes = classes|merge(['tab-active']) %}
+  {% endif %}
+{% endif %}
+{{ link|add_class(classes|join(' ')) }}
+
+

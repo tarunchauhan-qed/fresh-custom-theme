@@ -1,0 +1,134 @@
+{
+  "_@kurkle_color.js": {
+    "file": "dist/vendor/@kurkle_color.js",
+    "name": "vendor/@kurkle_color"
+  },
+  "_@lit_reactive-element.js": {
+    "file": "dist/vendor/@lit_reactive-element.js",
+    "name": "vendor/@lit_reactive-element"
+  },
+  "_chart_dist.js": {
+    "file": "dist/vendor/chart_dist.js",
+    "name": "vendor/chart_dist",
+    "imports": [
+      "_@kurkle_color.js"
+    ]
+  },
+  "_lit-element_lit-element.js": {
+    "file": "dist/vendor/lit-element_lit-element.js",
+    "name": "vendor/lit-element_lit-element",
+    "imports": [
+      "_@lit_reactive-element.js",
+      "_lit-html_lit-html.js"
+    ]
+  },
+  "_lit-html_is-server.js": {
+    "file": "dist/vendor/lit-html_is-server.js",
+    "name": "vendor/lit-html_is-server"
+  },
+  "_lit-html_lit-html.js": {
+    "file": "dist/vendor/lit-html_lit-html.js",
+    "name": "vendor/lit-html_lit-html"
+  },
+  "_lit_decorators.js": {
+    "file": "dist/vendor/lit_decorators.js",
+    "name": "vendor/lit_decorators",
+    "imports": [
+      "_@lit_reactive-element.js"
+    ]
+  },
+  "_lit_index.js": {
+    "file": "dist/vendor/lit_index.js",
+    "name": "vendor/lit_index",
+    "imports": [
+      "_@lit_reactive-element.js",
+      "_lit-html_lit-html.js",
+      "_lit-element_lit-element.js"
+    ]
+  },
+  "_swiper_modules.js": {
+    "file": "dist/vendor/swiper_modules.js",
+    "name": "vendor/swiper_modules",
+    "imports": [
+      "_swiper_shared.js"
+    ]
+  },
+  "_swiper_shared.js": {
+    "file": "dist/vendor/swiper_shared.js",
+    "name": "vendor/swiper_shared"
+  },
+  "_swiper_swiper.mjs.js": {
+    "file": "dist/vendor/swiper_swiper.mjs.js",
+    "name": "vendor/swiper_swiper.mjs",
+    "imports": [
+      "_swiper_shared.js"
+    ]
+  },
+  "_theme-change_index.js": {
+    "file": "dist/vendor/theme-change_index.js",
+    "name": "vendor/theme-change_index",
+    "imports": [
+      "_theme-change_index_commonjs-module.js"
+    ]
+  },
+  "_theme-change_index_commonjs-es-import.js": {
+    "file": "dist/vendor/theme-change_index_commonjs-es-import.js",
+    "name": "vendor/theme-change_index_commonjs-es-import",
+    "imports": [
+      "_theme-change_index.js"
+    ]
+  },
+  "_theme-change_index_commonjs-module.js": {
+    "file": "dist/vendor/theme-change_index_commonjs-module.js",
+    "name": "vendor/theme-change_index_commonjs-module"
+  },
+  "components/carousel/src/carousel.css": {
+    "file": "components/carousel/carousel.css",
+    "src": "components/carousel/src/carousel.css",
+    "isEntry": true
+  },
+  "components/carousel/src/carousel.js": {
+    "file": "components/carousel/carousel.js",
+    "name": "carousel",
+    "src": "components/carousel/src/carousel.js",
+    "isEntry": true,
+    "imports": [
+      "_swiper_shared.js",
+      "_swiper_modules.js"
+    ]
+  },
+  "components/chart-element/src/chart-element.ts": {
+    "file": "components/chart-element/chart-element.js",
+    "name": "chart-element",
+    "src": "components/chart-element/src/chart-element.ts",
+    "isEntry": true,
+    "imports": [
+      "_@lit_reactive-element.js",
+      "_lit-html_lit-html.js",
+      "_lit-element_lit-element.js",
+      "_chart_dist.js",
+      "_@kurkle_color.js"
+    ]
+  },
+  "components/hero/src/hero.css": {
+    "file": "components/hero/hero.css",
+    "src": "components/hero/src/hero.css",
+    "isEntry": true
+  },
+  "src/main.css": {
+    "file": "dist/main.css",
+    "src": "src/main.css",
+    "isEntry": true
+  },
+  "src/main.ts": {
+    "file": "dist/main.js",
+    "name": "main",
+    "src": "src/main.ts",
+    "isEntry": true,
+    "imports": [
+      "_theme-change_index_commonjs-es-import.js",
+      "_theme-change_index.js",
+      "_theme-change_index_commonjs-module.js"
+    ]
+  }
+}

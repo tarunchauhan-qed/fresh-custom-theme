@@ -1,0 +1,12 @@
+init:
+  header: true
+  js:
+    init.js: { minified: false }
+
+main:
+  css:
+    theme:
+      dist/main.css: {}
+  js:
+    dist/main.js: { attributes: { type: module } }
+

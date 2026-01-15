@@ -1,0 +1,129 @@
+@import "tailwindcss/theme" source(none);
+@import "tailwindcss/utilities" source(none);
+@source "../index.html";
+@source "../src";
+@source "../templates";
+@source "../components";
+
+.ck-content {
+  --theme-base: oklch(100% 0 0);
+  --theme-base-200: oklch(98% 0 0);
+  --theme-base-300: oklch(95% 0 0);
+  --theme-base-content: oklch(21% .006 285.885);
+  --theme-base-content-soft: oklch(55.1% .027 264.364);
+  --theme-brand: oklch(45% .24 277.023);
+  --theme-brand-content: oklch(93% .034 272.788);
+  --theme-primary: oklch(45% .24 277.023);
+  --theme-primary-content: oklch(93% .034 272.788);
+  --theme-secondary: oklch(57.03% 0.209 353.90);
+  --theme-secondary-content: oklch(100% 0 0);
+  --theme-neutral: oklch(14% .005 285.823);
+  --theme-neutral-content: oklch(92% .004 286.32);
+  --theme-info: oklch(53.59% 0.117 236.81);
+  --theme-info-content: oklch(100% 0 0);
+  --theme-success: oklch(52.13% 0.114 162.29);
+  --theme-success-content: oklch(100% 0 0);
+  --theme-warning: oklch(54.51% 0.110 83.05);
+  --theme-warning-content: oklch(100% 0 0);
+  --theme-error: oklch(56.57% 0.226 26.94);
+  --theme-error-content: oklch(100% 0 0);
+
+  --color-base-100: var(--theme-base);
+  --color-base-200: var(--theme-base-200);
+  --color-base-300: var(--theme-base-300);
+  --color-base-content: var(--theme-base-content);
+  --color-primary: var(--theme-primary);
+  --color-primary-content: var(--theme-primary-content);
+  --color-secondary: var(--theme-secondary);
+  --color-secondary-content: var(--theme-secondary-content);
+  --color-accent: var(--theme-accent);
+  --color-accent-content: var(--theme-accent-content);
+  --color-neutral: var(--theme-neutral);
+  --color-neutral-content: var(--theme-neutral-content);
+  --color-info: var(--theme-info);
+  --color-info-content: var(--theme-info-content);
+  --color-error: var(--theme-error);
+  --color-error-content: var(--theme-error-content);
+  --color-success: var(--theme-success);
+  --color-success-content: var(--theme-success-content);
+  --color-warning: var(--theme-warning);
+  --color-warning-content: var(--theme-warning-content);
+
+  --theme-font-family: 'InterDisplay';
+  --theme-font-size: 1rem;
+  --theme-font-size-sm: calc(var(--theme-font-size) * .875);
+  --theme-font-size-lg: calc(var(--theme-font-size) * 1.125);
+  --theme-h1-font-size: calc(var(--theme-font-size) * 3);
+  --theme-h2-font-size: calc(var(--theme-font-size) * 2.5);
+  --theme-h3-font-size: calc(var(--theme-font-size) * 2);
+  --theme-h4-font-size: calc(var(--theme-font-size) * 1.5);
+  --theme-h5-font-size: calc(var(--theme-font-size) * 1.25);
+  --theme-h6-font-size: var(--theme-font-size);
+  --theme-line-height: 1.5;
+  --theme-line-height-xs: calc(var(--theme-line-height) / 1.5);
+  --theme-line-height-sm: calc(var(--theme-line-height) / 1.25);
+  --theme-line-height-lg: calc(var(--theme-line-height) * 1.2);
+  --theme-font-weight-thin: 100;
+  --theme-font-weight-extralight: 200;
+  --theme-font-weight-light: 300;
+  --theme-font-weight-normal: 400;
+  --theme-font-weight-medium: 500;
+  --theme-font-weight-semibold: 600;
+  --theme-font-weight-bold: 700;
+  --theme-font-weight-extrabold: 800;
+  --theme-font-weight-black: 900;
+
+  --theme-container-width-sm: calc(var(--theme-container-width) * 0.45);
+  --theme-container-width-md: calc(var(--theme-container-width) * 0.6);
+  --theme-container-width-lg: calc(var(--theme-container-width) * 0.8);
+  --theme-container-width: 80rem;
+
+  --theme-spacing: .25rem;
+  --theme-gap: calc(var(--theme-spacing) * 8);
+  --theme-container-padding-x:calc(var(--theme-spacing) * 4);
+
+  --theme-radius: 0.5rem;
+
+  --theme-shadow-color-rgb: 0 0 0;
+  --theme-shadow: 0 10px 15px -3px rgb(var(--theme-shadow-color-rgb) / 0.1), 0 4px 6px -4px rgb(var(--theme-shadow-color-rgb) / 0.1);
+
+  --theme-link-content: var(--theme-primary);
+  --theme-link-hover-content: var(--theme-secondary);
+  --theme-link-focus-content: var(--theme-primary);
+  --theme-link-focus-visible-content: var(--theme-primary);
+
+  --theme-table-font-size: var(--theme-font-size);
+  --theme-table-header: var(--theme-primary);
+  --theme-table-header-content: var(--theme-primary-content);
+  --theme-table-header-font-weight: var(--theme-font-weight-bold);
+  --theme-table-body-content: var(--theme-base-content);
+
+  --form-item-margin-bottom: calc(var(--theme-spacing) * 8);
+  --form-label-margin: calc(var(--theme-spacing) * 2);
+  --form-label-font-weight: var(--font-weight-medium);
+  --form-input-border-color: var(--color-gray-300);
+  --form-input-padding: calc(var(--theme-spacing) * 1.5) calc(var(--theme-spacing) * 3);
+  --form-checkbox-separation: 1.5rem;
+  --form-checkbox-color: var(--color-primary);
+  --form-description-margin-top: calc(var(--theme-spacing) * 2);
+  --form-description-color: var(--color-gray-500);
+
+  @media (min-width: theme(--breakpoint-lg)) {
+    --theme-h1-font-size: calc(var(--theme-font-size) * 3.25);
+    --theme-h2-font-size: calc(var(--theme-font-size) * 2.75);
+    --theme-h3-font-size: calc(var(--theme-font-size) * 1.75);
+    --theme-h4-font-size: calc(var(--theme-font-size) * 1.5);
+    --theme-h5-font-size: calc(var(--theme-font-size) * 1.25);
+    --theme-h6-font-size: calc(var(--theme-font-size));
+  }
+}
+
+@plugin "daisyui" {
+  themes: light --default, dark --prefersdark;
+  include: button, alert, table;
+}
+
+.ck-content {
+  @import "./_base.css";
+  @import "./_fonts.css";
+}

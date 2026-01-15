@@ -1,0 +1,4 @@
+opacity-10
+opacity-25
+opacity-50
+opacity-75

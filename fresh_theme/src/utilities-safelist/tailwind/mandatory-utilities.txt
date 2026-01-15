@@ -1,0 +1,16 @@
+
+https://v5.daisyui.com/docs/utilities/
+https://v5.daisyui.com/docs/layout-and-typography/
+https://v5.daisyui.com/docs/colors/
+
+glass
+
+[data-theme]
+[data-theme="light"]
+[data-theme="dark"]
+
+1. Utilities básicas: derivadas de color* | Base de tailwindcss & daisyui lista y de mapear con variables de customizations?. Preview en index o sdc?
+2. Layout & typography: (plugin?, poder añadir fuentes de google sin compilar (textarea en config de theme)?) | Base. Preview.
+3. Dark mode: con plugin para cambiar. | Switcher + base lista para mapear con utilities (a tener en cuenta actual).
+---
+4. Refactor de componentes y vlsuite

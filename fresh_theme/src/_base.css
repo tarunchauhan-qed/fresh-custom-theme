@@ -1,0 +1,137 @@
+
+  body {
+    font-family: var(--theme-font-family);
+    font-size: var(--theme-font-size);
+    font-weight: var(--theme-font-weight-normal);
+    line-height: var(--theme-line-height);
+    color: var(--theme-base-content);
+    background-color: var(--theme-base);
+  }
+
+  p {
+    margin-bottom: calc(var(--theme-spacing) * 4);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--theme-font-family);
+    font-weight: var(--theme-font-weight-bold);
+    line-height: var(--theme-line-height-sm);
+  }
+
+  h1 {
+    font-size: var(--theme-h1-font-size);
+  }
+
+  h2 {
+    font-size: var(--theme-h2-font-size);
+  }
+
+  h3 {
+    font-size: var(--theme-h3-font-size);
+  }
+
+  h4 {
+    font-size: var(--theme-h4-font-size);
+  }
+
+  h5 {
+    font-size: var(--theme-h5-font-size);
+  }
+
+  h6 {
+    font-size: var(--theme-h6-font-size);
+  }
+
+  .field--type-text-long,
+  .field--type-text-with-summary {
+    a:not(.btn) {
+      text-decoration: underline;
+      color: var(--theme-link-content);
+
+      &:hover {
+        color: var(--theme-link-hover-content);
+      }
+
+      &:focus {
+        color: var(--theme-link-focus-content);
+      }
+
+      &:focus-visible {
+        color: var(--theme-link-focus-visible-content);
+      }
+    }
+
+    ol {
+      list-style-type: decimal;
+      list-style-position: inside;
+    }
+
+    ul {
+      list-style-type: disc;
+      list-style-position: inside;
+    }
+  }
+
+  [data-drupal-messages] {
+    @apply container;
+    margin-block: calc(var(--theme-spacing) * 6);
+    padding-inline: 0;
+
+    [role="contentinfo"][aria-label="Status message"] {
+      @apply alert;
+      @apply block;
+      @apply alert-info;
+    }
+    [role="contentinfo"][aria-label="Warning message"] {
+      @apply alert;
+      @apply block;
+      @apply alert-warning;
+    }
+    [role="contentinfo"][aria-label="Error message"] {
+      @apply alert;
+      @apply block;
+      @apply alert-error;
+    }
+
+    .messages {
+      @apply alert;
+      @apply block;
+
+      &.messages--status {
+        @apply alert-info;
+      }
+      &.messages--warning {
+        @apply alert-warning;
+      }
+      &.messages--error {
+        @apply alert-error;
+      }
+    }
+  }
+
+  .webform-confirmation {
+    @apply alert;
+    @apply alert-success;
+    .webform-confirmation__message,
+    .webform-confirmation__back {
+      margin-bottom: 0;
+  }
+}
+
+table {
+  @apply table;
+  @apply table-zebra;
+  font-size: var(--theme-table-font-size);
+
+  thead {
+    font-size: var(--theme-table-font-size);
+    font-weight: var(--theme-table-header-font-weight);
+    background-color: var(--theme-table-header);
+    color: var(--theme-table-header-content);
+  }
+
+  tbody {
+    background-color: var(--theme-table-body);
+    color: var(--theme-table-body-content);
+  }
+}

@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ * Template for a node article teaser.
+ */
+#}
+{% embed 'artisan:card' with {
+  title: node.label,
+  title_heading_level: 'h3',
+  content: node.hasField('body') and not node.get('body').isEmpty() ? content.body,
+  border: 'border',
+  actions: true,
+  card_extra_classes: ['mb-8']
+} %}
+  {% block actions %}
+    {% include 'artisan:button' with {
+      text: 'Read more',
+      url: url,
+      color: 'secondary',
+      variant: 'outline',
+    } only %}
+  {% endblock %}
+{% endembed %}

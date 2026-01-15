@@ -1,0 +1,12 @@
+
+{% for item in items %}
+  <div{{ attributes.addClass(classes, 'field', 'field__item') }}>
+    {% embed 'artisan:badge' with {
+      text: item.content,
+      color: 'secondary',
+      size: 'lg',
+      variant: 'soft',
+    } only %}
+    {% endembed %}
+  </div>
+{% endfor %}

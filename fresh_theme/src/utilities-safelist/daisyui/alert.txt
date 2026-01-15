@@ -1,0 +1,10 @@
+alert
+
+alert-outline
+alert-dash
+alert-soft
+
+alert-info
+alert-succes
+alert-warning
+alert-error

@@ -1,0 +1,11 @@
+{% set search_icon %}
+  {{ icon('heroicons', 'magnifying-glass', {size: 24, aria_labelledby: 'Search'}) }}
+{% endset %}
+
+{% embed "artisan:modal" with {
+  modal_id: 'search',
+  button_text: search_icon|raw,
+  modal_toggle_extra_classes: ['btn-ghost', 'btn-circle'],
+  content: content,
+} only %}
+{% endembed %}

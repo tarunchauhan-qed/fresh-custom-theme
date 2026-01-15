@@ -1,0 +1,9 @@
+
+{% extends "page.html.twig" %}
+
+{% block main_content %}
+  {% embed 'artisan:system-pages' with {
+      main_content: page.content,
+  } only %}
+  {% endembed %}
+{% endblock %}

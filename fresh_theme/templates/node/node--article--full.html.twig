@@ -1,0 +1,46 @@
+{#
+/**
+ * @file
+ * Template for a node article full.
+ */
+#}
+{# {% include 'artisan:article' with {
+  title: node.label,
+  publish_date: date,
+  image: node.hasField('field_image') and not node.get('field_image').isEmpty() ? content.field_image,
+  body: node.hasField('body') and not node.get('body').isEmpty() ? content.body,
+  author: author_name,
+  tags: node.hasField('field_tags') and not node.get('field_tags').isEmpty() ? content.field_tags,
+} %} #}
+
+
+{# In your node template #}
+{% if content._layout_builder %}
+  {% set layout_content = content._layout_builder[0].content %}
+  
+  {# Assuming you know which UUID contains which field #}
+  {% set card_data = {
+    'image': layout_content['4ec34b86-40a8-42f7-a8b9-eb4ca5eb82bf']|render,
+    'body': layout_content['1b293ced-06c7-4c29-a2bd-22eddc5bb131']|render|striptags|trim,
+    'tags': layout_content['d357b0ec-9aac-4b58-9c49-cd78de2cd065']|render|striptags|trim,
+  } %}
+  
+  {# Include SDC component #}
+  {% include 'artisan:article' with {
+    title: node.label,
+    publish_date: date,
+    image: card_data.image,
+    body: card_data.body,
+    tags: card_data.tags,
+    actions: true,
+  } %}
+{% endif %}
+
+<h2 class="article__title text-center my-8">Related Articles</h1>
+{{ content._layout_builder.1 }}
+
+{# {{ dump(content)}} #}
+{# {% if content._layout_builder.0 %}
+  {{ content._layout_builder.0 }}
+{% endif %}
+{{dump(content)}} #}

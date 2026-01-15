@@ -1,0 +1,30 @@
+name: fresh_theme
+type: theme
+'base theme': artisan
+description: ''
+'alt text': 'fresh_theme Artisan based theme.'
+core_version_requirement: ^11
+dependencies:
+  - 'drupal:serialization'
+regions:
+  navigation_top: 'Navigation Top'
+  navigation_start: 'Navigation Start'
+  navigation_center: 'Navigation Center'
+  navigation_end: 'Navigation End'
+  content: Content
+  footer_top: 'Footer Top'
+  footer_branding: 'Footer Branding'
+  footer_menu: 'Footer Menu'
+  footer_bottom: 'Footer Bottom'
+libraries:
+  - fresh_theme/init
+  - fresh_theme/main
+ckeditor5-stylesheets:
+  - dist/ckeditor.css
+css_variables_customizer:
+  stylesheets:
+    - src/main.css
+version: 1.0.0
+project: artisan
+datestamp: 1762855129
+generator: 'artisan_starterkit:2.0.2'

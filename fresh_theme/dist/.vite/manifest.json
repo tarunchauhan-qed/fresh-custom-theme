@@ -1,0 +1,41 @@
+{
+  "_theme-change_index.js": {
+    "file": "vendor/theme-change_index.js",
+    "name": "vendor/theme-change_index",
+    "imports": [
+      "_theme-change_index_commonjs-module.js"
+    ]
+  },
+  "_theme-change_index_commonjs-es-import.js": {
+    "file": "vendor/theme-change_index_commonjs-es-import.js",
+    "name": "vendor/theme-change_index_commonjs-es-import",
+    "imports": [
+      "_theme-change_index.js"
+    ]
+  },
+  "_theme-change_index_commonjs-module.js": {
+    "file": "vendor/theme-change_index_commonjs-module.js",
+    "name": "vendor/theme-change_index_commonjs-module"
+  },
+  "src/ckeditor.css": {
+    "file": "ckeditor.css",
+    "src": "src/ckeditor.css",
+    "isEntry": true
+  },
+  "src/main.css": {
+    "file": "main.css",
+    "src": "src/main.css",
+    "isEntry": true
+  },
+  "src/main.ts": {
+    "file": "main.js",
+    "name": "main",
+    "src": "src/main.ts",
+    "isEntry": true,
+    "imports": [
+      "_theme-change_index_commonjs-es-import.js",
+      "_theme-change_index.js",
+      "_theme-change_index_commonjs-module.js"
+    ]
+  }
+}

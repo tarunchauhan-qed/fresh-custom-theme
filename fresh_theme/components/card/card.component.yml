@@ -1,0 +1,121 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json"
+name: My card
+group: Base
+props:
+  type: object
+  required:
+    - heading_text
+    - orientation
+    - style
+  properties:
+    background:
+      type: string
+      title: Background
+      enum:
+        - default
+        - accent
+        - primary
+        - inverted
+      meta:enum:
+        default: Secondary
+        accent: Accent
+        primary: Primary
+        inverted: Inverted
+      examples:
+        - default
+    style:
+      type: string
+      title: Style
+      enum:
+        - framed
+        - full
+      meta:enum:
+        framed: Framed
+        full: Full width
+      examples:
+        - framed
+    orientation:
+      type: string
+      title: Orientation
+      enum:
+        - vertical
+        - horizontal
+      meta:enum:
+        vertical: Vertical
+        horizontal: Horizontal
+      examples:
+        - vertical
+    heading_text:
+      type: string
+      title: Heading
+      examples:
+        - "This is your card title"
+    level:
+      type: number
+      title: Heading level
+      enum:
+        - 2
+        - 3
+        - 4
+      default: 3
+      examples:
+        - 3
+    url:
+      type: string
+      title: Link
+    media:
+      $ref: json-schema-definitions://canvas.module/image
+      title: Image
+      type: object
+      examples:
+        - src: "assets/jj-ying-8bghKxNU1j0-unsplash.jpg"
+          width: 1200
+          height: 900
+          alt: "Photo by jjying: https://unsplash.com/photos/purple-and-blue-light-digital-wallpaper-8bghKxNU1j0"
+    text:
+      type: string
+      title: Description
+      pattern: "(.|\\r?\\n)*"
+      examples:
+        - "Quaerat laborum rerum dolores dolores dolor qui."
+    button_url:
+      type: string
+      title: Link
+    button_label:
+      type: string
+      title: Button label
+      examples:
+        - Choose this plan
+    button_variant:
+      type: string
+      title: Style
+      enum:
+        - primary
+        - secondary
+        - primary-inverted
+        - secondary-inverted
+      meta:enum:
+        primary: Primary
+        secondary: Secondary
+        primary-inverted: Primary inverted
+        secondary-inverted: Secondary inverted
+      examples:
+        - primary
+    button_size:
+      type: string
+      title: Button size
+      enum:
+        - small
+        - medium
+        - large
+      meta:enum:
+        small: Small
+        medium: Medium
+        large: Large
+      examples:
+        - medium
+    is_text_centered:
+      type: boolean
+      title: Center text
+      examples:
+        - false
